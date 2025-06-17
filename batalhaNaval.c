@@ -10,8 +10,8 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
     int tabuleiro[10][10] = {0};
-    int x = 4;
-    int y = 7;
+    int LINHAS = 9; 
+    int COLUNAS = 1;
     int i, j;
     char letras[1][10]; // Uma linha, quatro colunas
     int col = 0;
@@ -37,11 +37,18 @@ int main() {
         } 
         // controla em qual coluna ira começar e terminar, tambem define o tamanho do navio.
         for(j = 2; j < 5; j++) {
-            tabuleiro[x][j] = 3; //define como o navio deve ser visualizado.
+            tabuleiro[COLUNAS][j] = 3; //define como o navio deve ser visualizado.
         }
         // controla em qual linha ira começar e terminar, tambem define o tamanho do navio.
-        for(j = 4; j < 7; j++) {
-            tabuleiro[j][y] = 3; // define como o navio deve ser visualizado.
+        for(j = 0; j < 3; j++) {
+            tabuleiro[j][LINHAS] = 3; // define como o navio deve ser visualizado.
+        }
+       
+        for(j = 5; j < 8; j++) {
+            tabuleiro[j][j] = 3;
+        }
+        for(j = 3; j < 6; j++) {
+            tabuleiro[j][9 - j] = 3;
         }
         for(j = 0; j < 10; j++) {
             printf(" %d", tabuleiro[i][j]); // printa o mapa( matriz 10 x 10 ) com os valores de i e j
